@@ -1,5 +1,6 @@
 # Reading an excel file using Python
 
+from pkgutil import get_data
 import pandas as pd
 
 import os
@@ -7,7 +8,7 @@ import os
 import openpyxl
  
 # Give the location of the file
-path = "C:\\Users\\masis\\water.xlsx"
+path = "water.xlsx"
 wb_obj = openpyxl.load_workbook(path)
 sheet_obj = wb_obj.active
 
@@ -27,7 +28,8 @@ for i in range(2, m_row + 1):
     
     my_dict["Date"].append(date)
     my_dict["Value"].append(height)
-for i in range(len(my_dict["Date"])):    
- print ("Date"+ my_dict["Date"][i] +" = " + my_dict["Value"][i])   
+# for i in range(len(my_dict["Date"])):    
+#     print ("Date"+ my_dict["Date"][i] +" = " + my_dict["Value"][i])   
     
- 
+def get_data():
+    return my_dict 
