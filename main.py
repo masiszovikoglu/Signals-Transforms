@@ -56,7 +56,7 @@ def main():
     
     fhat = fft(f,M)*Ts
     fhat = fhat[0:(M//2+1)]
-    peaks, _ = find_peaks(abs(fhat)[0:len(fhat)//3])
+    peaks, _ = find_peaks(abs(fhat)[0:len(fhat)//3], distance=200, height=100000)
     peaksxy = []
     print("A")
     for p in peaks:
